@@ -1,0 +1,27 @@
+# Basic server port configuration
+server:
+  port: 8761    # Standard port for Eureka Server
+
+# Application name
+spring:
+  application:
+    name: service-registry
+
+# Eureka specific configuration
+eureka:
+  client:
+    # Don't register itself as a client
+    registerWithEureka: false
+    # Don't fetch registry
+    fetchRegistry: false
+  server:
+    # For development - disable self-preservation mode
+    enable-self-preservation: false
+    # How often to clean up expired instances
+    eviction-interval-timer-in-ms: 1000
+
+# Logging level (optional but helpful for development)
+logging:
+  level:
+    com.netflix.eureka: INFO
+    com.netflix.discovery: INFO
