@@ -8,13 +8,11 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/YOUR_USERNAME/config-repo    # Replace with your config repo
-          default-label: main    # or master, depending on your git branch
+          uri: https://github.com/JasonWYZE/recommendation-config-repo
+          default-label: main
           search-paths: '{application}'
           clone-on-start: true
-          # If private repo, add:
-          # username: your_github_username
-          # password: your_github_token
+
 
 # Register with Eureka
 eureka:
