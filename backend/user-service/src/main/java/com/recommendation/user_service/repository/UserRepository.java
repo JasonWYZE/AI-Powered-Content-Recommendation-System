@@ -2,19 +2,11 @@
 
 
 public interface UserRepository extends JpaRepository<User, UUID>{
-    
-}
-@Repository
-public interface BookRepository extends JpaRepository<Book, Long> {
-    // Find by unique field
-    Optional<Book> findByIsbn(String isbn);
 
-    // Check if exists
-    boolean existsByIsbn(String isbn);
+    Optional<User> findByEmail(String email);
+    boolean existsByEmail(String email);
+    boolean existsByUsername(String username);
+    List<User> findByCreatedAtAfter(LocalDateTime date);
+    long countByCreatedAtBetween(LocalDateTime start, LocalDateTime end);
 
-    // Find multiple by condition
-    List<Book> findByAuthor(String author);
-
-    // Custom query with multiple conditions
-    List<Book> findByAuthorAndPublishedYearGreaterThan(String author, int year);
 }
